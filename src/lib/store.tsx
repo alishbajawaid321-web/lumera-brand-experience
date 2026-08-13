@@ -191,9 +191,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   const placeOrder: StoreValue["placeOrder"] = useCallback(
     (details, shipping) => {
-      const items = cart.map((i) => {
-        const product = getProduct(i.id) ?? PRODUCTS[0];
-        return { ...i, name: product.name, price: effectivePrice(product) };
+      const items = cart.flatMap((i) => {
+        const product = getProduct(i.id);
+        if (!product) return [];
+        return [{ ...i, name: product.name, price: effectivePrice(product) }];
       });
       const orderSubtotal = items.reduce((s, i) => s + i.price * i.quantity, 0);
       const order: Order = {
