@@ -3,11 +3,11 @@ import { Breadcrumbs, PageHeader } from "@/components/page-header";
 import { ProductBrowser } from "@/components/product-browser";
 import { PRODUCTS } from "@/data/products";
 
-type ShopSearch = { category?: string };
+type ShopSearch = { category: string };
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (search: Record<string, unknown>): ShopSearch => ({
-    category: typeof search.category === "string" ? search.category : undefined,
+    category: typeof search["category"] === "string" ? (search["category"] as string) : "All",
   }),
   head: () => ({
     meta: [
@@ -37,7 +37,7 @@ function Shop() {
         title="Shop All"
         description="Every piece currently in the atelier. Filter by category, size, colour and price to narrow the selection."
       />
-      <ProductBrowser products={PRODUCTS} initialCategory={category ?? "All"} />
+      <ProductBrowser products={PRODUCTS} initialCategory={category} />
     </>
   );
 }
