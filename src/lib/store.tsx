@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { toast } from "sonner";
-import { PRODUCTS, effectivePrice, getProduct, type Product } from "@/data/products";
+import { effectivePrice, getProduct, type Product } from "@/data/products";
 
 export type CartItem = {
   id: string;
