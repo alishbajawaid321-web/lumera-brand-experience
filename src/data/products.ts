@@ -13,9 +13,28 @@ import colSoft from "@/assets/col-soft.jpg";
 import colUrban from "@/assets/col-urban.jpg";
 import colEssential from "@/assets/col-essential.jpg";
 import colAutumn from "@/assets/col-autumn.jpg";
+import mMaxiSand from "@/assets/m-maxi-sand.jpg";
+import mAbaya from "@/assets/m-abaya-noir.jpg";
+import mPleated from "@/assets/m-pleated-taupe.jpg";
+import mGown from "@/assets/m-gown-charcoal.jpg";
+import mCoord from "@/assets/m-coord-oat.jpg";
+import mKimono from "@/assets/m-kimono-camel.jpg";
+import mShirtdress from "@/assets/m-shirtdress-ivory.jpg";
+import mLayered from "@/assets/m-layered-stone.jpg";
+import mTunic from "@/assets/m-tunic-ivory.jpg";
+import mFormal from "@/assets/m-formal-champagne.jpg";
+import accessories2 from "@/assets/p-accessories-2.jpg";
+import bagTaupe from "@/assets/p-bag-taupe.jpg";
+import eveningBurgundy from "@/assets/p-evening-burgundy.jpg";
+import suitGray from "@/assets/p-suit-gray.jpg";
+import blouseLinen from "@/assets/p-blouse-linen.jpg";
+import heroModest from "@/assets/hero-modest.jpg";
+
+export const MODEST_HERO = heroModest;
 
 export const CATEGORIES = [
   "Dresses",
+  "Modest Wear",
   "Tops",
   "Bottoms",
   "Outerwear",
@@ -23,6 +42,7 @@ export const CATEGORIES = [
 ] as const;
 
 export type Category = (typeof CATEGORIES)[number];
+
 
 export type ColorOption = { name: string; hex: string };
 
