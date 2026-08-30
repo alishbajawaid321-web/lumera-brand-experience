@@ -36,7 +36,7 @@ function Shop() {
         title="Shop All"
         description="Every piece currently in the atelier. Filter by category, size, colour and price to narrow the selection."
       />
-      <ProductBrowser products={PRODUCTS} initialCategory={category} />
+      <ProductBrowser products={PRODUCTS} initialCategory={category ?? "All"} />
     </>
   );
 }
