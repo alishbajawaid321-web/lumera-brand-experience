@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import ogImage from "@/assets/lumera-og.jpg";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { StoreProvider } from "@/lib/store";
 import { SiteHeader } from "@/components/site-header";
@@ -92,8 +93,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "LUMÉRA is a modern luxury fashion house: refined tailoring, silk and cashmere in a restrained neutral palette.",
       },
       { property: "og:site_name", content: "LUMÉRA" },
+      { property: "og:title", content: "LUMÉRA — Modern Luxury Fashion" },
+      {
+        property: "og:description",
+        content:
+          "Refined tailoring, silk and cashmere in a restrained neutral palette. Designed in Copenhagen, made in small European workshops.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: ogImage },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "LUMÉRA — Modern Luxury Fashion" },
+      {
+        name: "twitter:description",
+        content:
+          "Refined tailoring, silk and cashmere in a restrained neutral palette. Designed in Copenhagen, made in small European workshops.",
+      },
+      { name: "twitter:image", content: ogImage },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -103,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@200;300;400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,

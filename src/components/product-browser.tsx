@@ -29,9 +29,9 @@ export function ProductBrowser({
   initialCategory = "All",
 }: {
   products: Product[];
-  initialCategory?: string;
+  initialCategory?: string | undefined;
 }) {
-  const [category, setCategory] = useState<string>(initialCategory);
+  const [category, setCategory] = useState<string>(initialCategory ?? "All");
   const [query, setQuery] = useState("");
   const [sizes, setSizes] = useState<string[]>([]);
   const [colors, setColors] = useState<string[]>([]);
