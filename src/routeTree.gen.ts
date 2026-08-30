@@ -15,10 +15,14 @@ import { Route as AccountRouteImport } from './routes/account'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ModestWearRouteImport } from './routes/modest-wear'
 import { Route as NewArrivalsRouteImport } from './routes/new-arrivals'
 import { Route as OrderConfirmationRouteImport } from './routes/order-confirmation'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ShippingReturnsRouteImport } from './routes/shipping-returns'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WishlistRouteImport } from './routes/wishlist'
 import { Route as CollectionsIndexRouteImport } from './routes/collections.index'
 import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
@@ -54,6 +58,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ModestWearRoute = ModestWearRouteImport.update({
   id: '/modest-wear',
   path: '/modest-wear',
@@ -69,9 +78,24 @@ const OrderConfirmationRoute = OrderConfirmationRouteImport.update({
   path: '/order-confirmation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShippingReturnsRoute = ShippingReturnsRouteImport.update({
+  id: '/shipping-returns',
+  path: '/shipping-returns',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WishlistRoute = WishlistRouteImport.update({
@@ -102,10 +126,14 @@ export interface FileRoutesByFullPath {
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/modest-wear': typeof ModestWearRoute
   '/new-arrivals': typeof NewArrivalsRoute
   '/order-confirmation': typeof OrderConfirmationRoute
+  '/privacy': typeof PrivacyRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
+  '/terms': typeof TermsRoute
   '/wishlist': typeof WishlistRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
@@ -118,10 +146,14 @@ export interface FileRoutesByTo {
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/modest-wear': typeof ModestWearRoute
   '/new-arrivals': typeof NewArrivalsRoute
   '/order-confirmation': typeof OrderConfirmationRoute
+  '/privacy': typeof PrivacyRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
+  '/terms': typeof TermsRoute
   '/wishlist': typeof WishlistRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
@@ -135,10 +167,14 @@ export interface FileRoutesById {
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/modest-wear': typeof ModestWearRoute
   '/new-arrivals': typeof NewArrivalsRoute
   '/order-confirmation': typeof OrderConfirmationRoute
+  '/privacy': typeof PrivacyRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
+  '/terms': typeof TermsRoute
   '/wishlist': typeof WishlistRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
@@ -153,10 +189,14 @@ export interface FileRouteTypes {
     | '/cart'
     | '/checkout'
     | '/contact'
+    | '/faq'
     | '/modest-wear'
     | '/new-arrivals'
     | '/order-confirmation'
+    | '/privacy'
+    | '/shipping-returns'
     | '/shop'
+    | '/terms'
     | '/wishlist'
     | '/collections/$slug'
     | '/product/$productId'
@@ -169,10 +209,14 @@ export interface FileRouteTypes {
     | '/cart'
     | '/checkout'
     | '/contact'
+    | '/faq'
     | '/modest-wear'
     | '/new-arrivals'
     | '/order-confirmation'
+    | '/privacy'
+    | '/shipping-returns'
     | '/shop'
+    | '/terms'
     | '/wishlist'
     | '/collections/$slug'
     | '/product/$productId'
@@ -185,10 +229,14 @@ export interface FileRouteTypes {
     | '/cart'
     | '/checkout'
     | '/contact'
+    | '/faq'
     | '/modest-wear'
     | '/new-arrivals'
     | '/order-confirmation'
+    | '/privacy'
+    | '/shipping-returns'
     | '/shop'
+    | '/terms'
     | '/wishlist'
     | '/collections/$slug'
     | '/product/$productId'
@@ -202,10 +250,14 @@ export interface RootRouteChildren {
   CartRoute: typeof CartRoute
   CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
   ModestWearRoute: typeof ModestWearRoute
   NewArrivalsRoute: typeof NewArrivalsRoute
   OrderConfirmationRoute: typeof OrderConfirmationRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ShippingReturnsRoute: typeof ShippingReturnsRoute
   ShopRoute: typeof ShopRoute
+  TermsRoute: typeof TermsRoute
   WishlistRoute: typeof WishlistRoute
   CollectionsSlugRoute: typeof CollectionsSlugRoute
   ProductProductIdRoute: typeof ProductProductIdRoute
@@ -256,6 +308,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/modest-wear': {
       id: '/modest-wear'
       path: '/modest-wear'
@@ -277,11 +336,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrderConfirmationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shipping-returns': {
+      id: '/shipping-returns'
+      path: '/shipping-returns'
+      fullPath: '/shipping-returns'
+      preLoaderRoute: typeof ShippingReturnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop': {
       id: '/shop'
       path: '/shop'
       fullPath: '/shop'
       preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/wishlist': {
@@ -322,10 +402,14 @@ const rootRouteChildren: RootRouteChildren = {
   CartRoute: CartRoute,
   CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
   ModestWearRoute: ModestWearRoute,
   NewArrivalsRoute: NewArrivalsRoute,
   OrderConfirmationRoute: OrderConfirmationRoute,
+  PrivacyRoute: PrivacyRoute,
+  ShippingReturnsRoute: ShippingReturnsRoute,
   ShopRoute: ShopRoute,
+  TermsRoute: TermsRoute,
   WishlistRoute: WishlistRoute,
   CollectionsSlugRoute: CollectionsSlugRoute,
   ProductProductIdRoute: ProductProductIdRoute,
